@@ -23,5 +23,5 @@ chmod +x install.sh
 ## Compile P4:
 ```bash
 cd p4src
-p4c-bm2-ss --arch v1model --target bmv2 -o ../build main.p4
+p4c-bm2-ss --arch v1model --target bmv2 -o build/ p4src/main.p4
 ```
