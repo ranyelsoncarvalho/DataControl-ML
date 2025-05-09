@@ -19,3 +19,9 @@ chmod +x install.sh
 - `Mininet`
 - `tcpreplay` (to inject traffic from `.pcap`)
 - `RYU Controller` (DataControl-ML main controller)
+
+## Compile P4:
+```bash
+cd p4src
+p4c-bm2-ss --arch v1model --target bmv2 -o ../build main.p4
+```
