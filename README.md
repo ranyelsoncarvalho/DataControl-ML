@@ -69,9 +69,9 @@ chmod +x configure_s6_routes.sh
 ```
 ## Run the Classifier:
 The `classification.py` code must be executed on **switches running the DataControl-ML engine**, that is, on switches **S1**, **S5** and **S7**.
-### 🔁 Exemplo de execução em um switch (ex: S1):
+### 🔁 Example execution on a switch (e.g. S1):
 ```bash
 python3 classification.py --switch_id S1 --thrift_port 9091
 ```
 
-> Certifique-se de usar portas `thrift` distintas para cada switch, como 9091, 9092, 9093.
+> Make sure to use distinct `thrift` ports for each switch, such as 9091, 9092, 9093.
