@@ -1,6 +1,6 @@
 # DataControl-ML
 
-## Prerequisites (P4 Environment + ML + Fuzzy + Thrift + RYU Controller)
+## Requisites (P4 Environment + ML + Fuzzy + Thrift + RYU Controller)
 Run the script below on an Ubuntu 16.04 LTS (or higher) system to prepare the environment:
 
 ```bash
