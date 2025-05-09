@@ -93,7 +93,7 @@ ryu-manager controller.py
 ## Inject traffic with `.pcap` files:
 ```bash
 xterm ext1
-tcpreplay --intf1=ext1-eth0 pcap/attack_s1.pcap
+tcpreplay --intf1=ext1-eth0 dataset/pcap/attack_s1.pcap
 ```
 
 ## Checks:
