@@ -25,3 +25,30 @@ chmod +x install.sh
 cd p4src
 p4c-bm2-ss --arch v1model --target bmv2 -o build/ p4src/main.p4
 ```
+## Run Mininet Topology:
+```bash
+sudo python3 topo.py
+```
+## Run the P4 Switches:
+For each switch, you must run the `simple_switch` command with the appropriate arguments:
+
+### Example: Run switch S1
+```bash
+simple_switch --device-id 0 --thrift-port 9091 \
+-i 1@eth1 -i 2@eth2 -i 3@eth3 \
+build/main.json
+```
+
+### Example: Run switch S5
+```bash
+simple_switch --device-id 1 --thrift-port 9092 \
+-i 1@eth4 -i 2@eth5 -i 3@eth6 \
+build/main.json
+```
+
+### Example: Run switch S7
+```bash
+simple_switch --device-id 2 --thrift-port 9093 \
+-i 1@eth7 -i 2@eth8 -i 3@eth9 \ 
+build/main.json
+```
