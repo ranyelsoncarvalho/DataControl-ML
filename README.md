@@ -75,3 +75,19 @@ python3 classification.py --switch_id S1 --thrift_port 9091
 ```
 
 > Make sure to use distinct `thrift` ports for each switch, such as 9091, 9092, 9093.
+
+## Run RYU Controller:
+```bash
+ryu-manager controller.py
+```
+
+## Inject traffic with `.pcap` files:
+```bash
+xterm ext1
+tcpreplay --intf1=ext1-eth0 pcap/attack_s1.pcap
+```
+
+## Checks:
+- `tcpdump` on target hosts
+- RYU logs (global confidence, classification, dissemination)
+- `classification_results.txt`
