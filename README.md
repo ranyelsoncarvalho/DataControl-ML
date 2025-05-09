@@ -53,3 +53,25 @@ simple_switch --device-id 2 --thrift-port 9093 \
 build/main.json
 ```
 > Adjust the `-i` interface names according to the order created by Mininet (use `ifconfig` or `ip link` to check).
+
+### Important:
+- The **S6** switch, responsible for IP-based routing, can also be a P4 switch. Start with:
+```bash
+simple_switch --device-id 3 --thrift-port 9096 \
+-i 1@eth10 -i 2@eth11 -i 3@eth12 \
+build/main.json
+```
+## Configure routes on S6
+
+```bash
+chmod +x configure_s6_routes.sh
+./configure_s6_routes.sh
+```
+## Run the Classifier:
+The `classification.py` code must be executed on **switches running the DataControl-ML engine**, that is, on switches **S1**, **S5** and **S7**.
+### 🔁 Exemplo de execução em um switch (ex: S1):
+```bash
+python3 classification.py --switch_id S1 --thrift_port 9091
+```
+
+> Certifique-se de usar portas `thrift` distintas para cada switch, como 9091, 9092, 9093.
