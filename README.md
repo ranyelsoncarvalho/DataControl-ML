@@ -1,10 +1,21 @@
 # DataControl-ML
 
-## Pré-requisitos (Ambiente P4 + ML + Fuzzy + Thrift + RYU Controller)
-Execute o scrip abaixo em um sistema Ubuntu 16.04 LTS (ou superior) para preparar o ambiente:
+## Prerequisites (P4 Environment + ML + Fuzzy + Thrift + RYU Controller)
+Run the script below on an Ubuntu 16.04 LTS (or higher) system to prepare the environment:
 
 ```bash
-wget https://raw.githubusercontent.com/seu-repo/datacontrol-ml/install.sh
+wget https://github.com/ranyelsoncarvalho/DataControl-ML/raw/refs/heads/main/P4-environment/install.sh
 chmod +x install.sh
 ./install.sh
 ```
+## Script contents:
+- Installation of:
+- System libraries (g++, cmake, libtool, etc.)
+- Python ML: `scikit-learn`, `scikit-fuzzy`, `crcmod`
+- `protobuf`, `gRPC`, `Apache Thrift`
+- `p4c` (P4 compiler)
+- `behavioral-model` (BMv2 switch)
+- `PI` (P4Runtime Interface)
+- `Mininet`
+- `tcpreplay` (to inject traffic from `.pcap`)
+- `RYU Controller` (DataControl-ML main controller)
