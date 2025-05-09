@@ -29,6 +29,15 @@ p4c-bm2-ss --arch v1model --target bmv2 -o build/ p4src/main.p4
 ```bash
 sudo python3 topo.py
 ```
+
+## Simulation Scenario: 
+- The **DataControl-ML** engine is installed on switches **S1**, **S5**, and **S7**.
+- Switch **S6** acts as an **ingress router**, receiving traffic from external hosts (`ext1` to `ext5`) and redirecting packets based on the destination IP address:
+- `0.0.0.0/8` to `85.0.0.0/8` → **S1**
+- `86.0.0.0/8` to `170.0.0.0/8` → **S7**
+- `171.0.0.0/8` to `255.0.0.0/8` → **S5**
+- Traffic can be legitimate or malicious, coming from external hosts via `.pcap` files played with `tcpreplay`.
+
 ## Run the P4 Switches:
 For each switch, you must run the `simple_switch` command with the appropriate arguments:
 
@@ -69,7 +78,7 @@ chmod +x configure_s6_routes.sh
 ```
 ## Run the Classifier:
 The `classification.py` code must be executed on **switches running the DataControl-ML engine**, that is, on switches **S1**, **S5** and **S7**.
-### 🔁 Example execution on a switch (e.g. S1):
+### Example execution on a switch (e.g. S1):
 ```bash
 python3 classification.py --switch_id S1 --thrift_port 9091
 ```
