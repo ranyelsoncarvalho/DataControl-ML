@@ -1,0 +1,22 @@
+P4Info
+------
+Preamble:
+  Name: main
+  Architecture: v1model
+
+Tables:
+  - Name: ipv4_lpm
+    ID: 33554433
+    Match Fields:
+      - Name: hdr.ipv4.dstAddr
+        Match Type: LPM
+    Actions:
+      - Name: ipv4_forward
+
+Actions:
+  - Name: ipv4_forward
+    Params:
+      - Name: dstAddr
+        Bitwidth: 48
+      - Name: port
+        Bitwidth: 9
