@@ -52,3 +52,4 @@ simple_switch --device-id 2 --thrift-port 9093 \
 -i 1@eth7 -i 2@eth8 -i 3@eth9 \ 
 build/main.json
 ```
+> Adjust the `-i` interface names according to the order created by Mininet (use `ifconfig` or `ip link` to check).
