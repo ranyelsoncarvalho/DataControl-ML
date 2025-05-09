@@ -82,7 +82,7 @@ cd ..
 echo "=== Installing Tcpreplay (traffic replay tool) ==="
 sudo apt install -y tcpreplay
 
-echo "=== Installing RYU Controller via Git ==="
+echo "=== Installing RYU Controller Git ==="
 git clone https://github.com/faucetsdn/ryu.git
 cd ryu
 sudo python3 setup.py install
