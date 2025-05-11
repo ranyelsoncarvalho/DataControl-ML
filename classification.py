@@ -21,9 +21,9 @@ PLATT_SCALER = "platt_scaler.joblib"
 local_trust = defaultdict(lambda: 0.5)
 last_update = dict()
 
-ALPHA = 0.5
-DECAY = 0.9
-MONITORING_INTERVAL = 15
+ALPHA = 0.5 #local trust value aggregation coefficient
+DECAY = 0.9 #reduction coefficient: forgetting factor
+MONITORING_INTERVAL = 15 #time interval: forgetting factor
 
 def classify_flows(): #module classification
     conn = P4RuntimeSwitchConnection(name=args.switch_id, address=f"127.0.0.1:{args.thrift_port}", device_id=0)
@@ -133,7 +133,7 @@ def update_local_trust(client_flows): #Adding the Value of Trust
                 local_trust[ip] *= DECAY
                 last_update[ip] = now
 
-    trust_threshold = sum(legitimate_clients) / len(legitimate_clients) if legitimate_clients else 0.5
+    trust_threshold = sum(legitimate_clients) / len(legitimate_clients) if legitimate_clients else 0.5 #smoothing coefficient:
 
     try:
         conn = P4RuntimeSwitchConnection(name=args.switch_id, address=f"127.0.0.1:{args.thrift_port}", device_id=0)
