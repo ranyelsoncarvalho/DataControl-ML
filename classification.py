@@ -25,7 +25,7 @@ ALPHA = 0.5
 DECAY = 0.9
 MONITORING_INTERVAL = 15
 
-def classify_flows():
+def classify_flows(): #module classification
     conn = P4RuntimeSwitchConnection(name=args.switch_id, address=f"127.0.0.1:{args.thrift_port}", device_id=0)
     conn.master_arbitration_update()
     conn.set_forwarding_pipeline_config(p4info_path="build/p4info.txt", bmv2_json_path="build/switch.json")
@@ -112,7 +112,7 @@ def classify_flows():
     client_flows = list(zip(client_ips, confidences))
     update_local_trust(client_flows)
 
-def update_local_trust(client_flows):
+def update_local_trust(client_flows): #Adding the Value of Trust
     global local_trust, last_update
 
     now = datetime.now()
