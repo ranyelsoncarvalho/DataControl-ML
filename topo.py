@@ -1,4 +1,3 @@
-
 from mininet.topo import Topo
 from mininet.net import Mininet
 from mininet.node import RemoteController
@@ -25,6 +24,23 @@ class DataControlMLTopo(Topo):
         }
 
         for label, (ip, sw) in subnets.items():
+
+        
+        for i in range(1, 4):
+            h = self.addHost(f's1h{i}', ip=f'10.0.{i}.10/8')
+            self.addLink(h, s1)
+
+            h = self.addHost(f's2h{i}', ip=f'90.0.{i}.10/8')
+            self.addLink(h, s2)
+
+            h = self.addHost(f's3h{i}', ip=f'200.0.{i}.10/8')
+            self.addLink(h, s3)
+
+            h = self.addHost(f's4h{i}', ip=f'172.0.{i}.10/8')
+            self.addLink(h, s4)
+
+            h = self.addHost(f's5h{i}', ip=f'250.0.{i}.10/8')
+            self.addLink(h, s5)
             h = self.addHost(f'h_{label}', ip=ip)
             self.addLink(h, sw)
 
