@@ -91,6 +91,7 @@ ryu-manager controller.py
 ```
 
 ## Inject traffic with `.pcap` files:
+Open xterm terminals for ext1, ext2 and ext3
 ```bash
 xterm ext1
 tcpreplay --intf1=ext1-eth0 dataset/pcap/attack_s1.pcap
