@@ -1,0 +1,5 @@
+Flow 0: LEGITIMATE, Trust = 0.9851
+Flow 1: MALICIOUS, Trust = 0.0411
+Flow 2: LEGITIMATE, Trust = 0.9785
+Flow 3: MALICIOUS, Trust = 0.0239
+Flow 4: MALICIOUS, Trust = 0.0336
