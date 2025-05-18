@@ -1,5 +1,5 @@
 # DataControl-ML
-Mechanism for detecting and mitigating volumetric DDoS attacks in SDN networks. This mechanism combines the speed of data plane processing with the application of a machine learning algorithm together with the global vision of the control plane with the application of a fuzzy system, providing a hybrid approach for effective control and monitoring of network traffic in combating DDoS attacks.
+Mechanism for detecting and mitigating volumetric DDoS attacks in SDN networks. This mechanism combines the speed of data plane processing with the application of a machine learning algorithm together with the global vision of the control plane with the application of a fuzzy system for defining global trust, providing a hybrid approach for effective control and monitoring of network traffic in combating DDoS attacks.
 
 #### More Information: [Thesis](https://repositorio.unb.br/)
 
